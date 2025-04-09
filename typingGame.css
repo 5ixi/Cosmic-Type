@@ -87,10 +87,22 @@ h1 {
   gap: 1.5rem;
 }
 
+/* Make stats scrollable on mobile */
+@media (max-width: 768px) {
+  .stats {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    padding-bottom: 0.5rem; /* Space for scrollbar */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+}
+
 .stat {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 80px; /* Ensure each stat has enough space */
 }
 
 .stat-label {
