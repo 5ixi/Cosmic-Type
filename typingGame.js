@@ -156,6 +156,11 @@ class TypingGame {
       this.elements.soundToggle.addEventListener('click', () => this.toggleSound());
       this.elements.closeResult.addEventListener('click', () => this.elements.resultPopup.classList.remove('show'));
 
+
+      this.elements.quoteInput.addEventListener('copy', (e) => e.preventDefault());
+      this.elements.quoteInput.addEventListener('paste', (e) => e.preventDefault());
+      this.elements.quoteInput.addEventListener('cut', (e) => e.preventDefault());
+
       document.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' && !this.isRunning) this.start();
           if (e.key === 'Escape') this.reset();
