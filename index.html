@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmic Type - A Unique Typing Game</title>
+  <link rel="stylesheet" href="typingGame.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <div class="container">
+    <header>
+      <h1>Cosmic Type</h1>
+      <p class="subtitle">Test your typing speed in the cosmic void</p>
+    </header>
+    
+    <main id="game-container">
+      <!-- Toggle buttons for theme and sound -->
+      <div class="toggle-container">
+        <button id="theme-toggle" class="toggle-button secondary-button">
+          <span class="material-icons">light_mode</span>
+        </button>
+        <button id="sound-toggle" class="toggle-button secondary-button">
+          <span class="material-icons">volume_up</span>
+        </button>
+      </div>
+      
+      <!-- Difficulty selector -->
+      <div class="difficulty-selector">
+        <span class="difficulty-label">Difficulty:</span>
+        <button class="difficulty-button active" data-mode="normal">Normal</button>
+        <button class="difficulty-button" data-mode="hard">Hard</button>
+        <button class="difficulty-button" data-mode="expert">Expert</button>
+      </div>
+      
+      <!-- Game wrapper -->
+      <div class="game-wrapper">
+        <div class="game-header">
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-label">Time</div>
+              <div id="timer" class="stat-value">00:00</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">WPM</div>
+              <div id="wpm" class="stat-value">0</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Accuracy</div>
+              <div id="accuracy" class="stat-value">100%</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="game-content">
+          <div class="quote-container">
+            <div id="quote-display">
+              <span class="quote-placeholder">Click "Start" to begin typing...</span>
+            </div>
+          </div>
+          
+          <div class="input-container">
+            <textarea id="quote-input" rows="3" placeholder="Start typing here..." disabled></textarea>
+          </div>
+          
+          <div class="buttons-container">
+            <button id="start-button" class="primary-button">
+              <span class="material-icons">play_arrow</span>
+              Start
+            </button>
+            <button id="reset-button" class="secondary-button" disabled>
+              <span class="material-icons">refresh</span>
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Result popup -->
+      <div id="result-popup" class="result-popup">
+        <div class="result-content">
+          <h2 class="result-title">Your Results</h2>
+          <div class="result-stats">
+            <div class="result-stat">
+              <div id="final-wpm" class="result-stat-value">0</div>
+              <div class="result-stat-label">WPM</div>
+            </div>
+            <div class="result-stat">
+              <div id="final-accuracy" class="result-stat-value">100%</div>
+              <div class="result-stat-label">Accuracy</div>
+            </div>
+          </div>
+          <button id="close-result" class="primary-button close-result">
+            <span class="material-icons">check</span>
+            Continue
+          </button>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="footer">
+      <p>Cosmic Type &copy; <span id="current-year">2025</span> | Challenge your typing skills in the void</p>
+    </footer>
+  </div>
+  
+  <script src="typingGame.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
